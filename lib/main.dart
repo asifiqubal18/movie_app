@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/utils/text.dart';
+import 'package:movie_app/widgets/toprated.dart';
 import 'package:movie_app/widgets/trending.dart';
+import 'package:movie_app/widgets/tv.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 void main()=> runApp(new MyApp());
@@ -62,11 +64,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(title: modified_text(text :'Movies💖'),
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Colors.black,
       centerTitle: true,),
       body: ListView(
         children: [
-          TrendingMovies(trending: trendingmovies,)
+          TrendingMovies(trending: trendingmovies,),
+          TopRated(toprated: topratedmovies,),
+
+          TV(tv: tv,),
         ],
       ),
     );
