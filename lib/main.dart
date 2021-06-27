@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/utils/text.dart';
+import 'package:movie_app/widgets/trending.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 void main()=> runApp(new MyApp());
@@ -58,8 +60,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Movies'),
+      backgroundColor: Colors.black,
+      appBar: AppBar(title: modified_text(text :'Movies💖'),
+      backgroundColor: Colors.lightBlue,
       centerTitle: true,),
+      body: ListView(
+        children: [
+          TrendingMovies(trending: trendingmovies,)
+        ],
+      ),
     );
   }
 }
